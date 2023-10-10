@@ -1,7 +1,6 @@
 #include "main.h"
 /**
  * jack_bauer - def Important.
- * 
  * Return: Always 0 (Success)
  */
 
