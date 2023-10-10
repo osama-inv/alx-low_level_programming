@@ -15,7 +15,8 @@ else if (n == 0)
 {
 _putchar('0');
 i = 0;
-}else if (n < 0)
+}
+else if (n < 0)
 {
 _putchar('-');
 i = -1;
