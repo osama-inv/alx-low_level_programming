@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * jack_bauer - def Important.
- * @i : a char
+ * 
  * Return: Always 0 (Success)
  */
 
