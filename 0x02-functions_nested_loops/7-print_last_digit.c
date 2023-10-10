@@ -1,14 +1,17 @@
 #include "main.h"
 /**
  * print_last_digit - def Important.
- * @n : a char
+ * @i : a char
  * Return: Always 0 (Success)
  */
 
-int print_last_digit(int n)
+int print_last_digit(int i)
 {
-int i = n%10;
-printf("%d", i);
-return (i);
+i %= 10;
+if (i < 0)
+i *= -1;
+i += 48;
+_putchar(i);
+return (i - '0');
 }
 
