@@ -1,12 +1,11 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "main.h"
 /**
- * main - Entry point
- *
+ * jack_bauer - def Important.
+ * @i : a char
  * Return: Always 0 (Success)
  */
-int main(void)
+
+void jack_bauer(void)
 {
 char i1 = '0';
 char i2 = '0';
@@ -39,7 +38,5 @@ i2 = '0';
 }
 
 }
-
-return (0);
 }
 
