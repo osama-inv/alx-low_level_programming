@@ -25,7 +25,8 @@ while (n)
 {
 rev *= 10;
 if (n % 10 == 0 && tan)
-was = 1;
+was++;
+if (n % 10 != 0)
 tan = 0;
 rev += n % 10;
 n /= 10;
@@ -38,7 +39,6 @@ _putchar('0' + rev % 10);
 rev /= 10;
 }
 }
-if (was)
+while (was--)
 _putchar('0');
 }
-
