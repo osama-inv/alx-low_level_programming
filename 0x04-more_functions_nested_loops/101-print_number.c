@@ -1,43 +1,44 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
- * print_number - print any integer using putchar
- * @n: integer to be printed
+ * print_number - a def
+ * @n:int
+ * Return: Always 0 or 1
  */
 
 void print_number(int n)
 {
-	int count, x, y, k;
-
-	x = 0;
-	y = 1000000000;
-
-	if (n == 0)
-		_putchar('0');
-	else if (n > 0)
-		n *= -1;
-	else
-	       	_putchar('-');
-	for (count = 0; count < 10; count++)
-	{
-		if (n / y == 0 && x == 0)
-		{
-			y /= 10;
-			
-			continue;
-		}
-		else if (x == 0)
-		{
-			_putchar(-(n / y) + '0');
-			x += 1;
-		}
-		else
-		{
-			k = (-(n / y) % 10);
-			if (k < 0)
-				k *= -1;
-			_putchar(k + '0');
-		}
-		y /= 10;
-	}
+int was = 0;
+int tan = 1;
+int smaller = 0;
+if (n < 0)
+{
+smaller = 1;
+n *= -1;
 }
+if (n == 0)
+_putchar('0');
+else
+{
+int rev = 0;
+while (n)
+{
+rev *= 10;
+if (n % 10 == 0 && tan)
+was = 1;
+tan = 0;
+rev += n % 10;
+n /= 10;
+}
+if (smaller)
+_putchar('-');
+while (rev)
+{
+_putchar('0' + rev % 10);
+rev /= 10;
+}
+}
+if (was)
+_putchar('0');
+}
+
