@@ -1,24 +1,36 @@
-#include <stdio.h>
+#include "main.h"
+
 /**
- * main - Entry Point
- *
- * Return: Always 0 (Success)
+ * more_numbers - a def
+ * Return: Always 0 or 1
  */
 
-int main(void)
+void more_numbers(void)
 {
-char him = '0';
+int num = 0;
+int him = 0;
 int lines = 10;
+int noi = 0;
 
 while (lines--)
 {
-while (him <= '14')
+him = 0;
+num = 0;
+noi = 0;
+while (num <= 14)
 {
-_putchar(him);
-him++;
+
+if (him > 9)
+{
+    him %= 10;
+    noi = 1;
 }
-_putchar('\n');
+if (noi)
+putchar('1');
+putchar('0' + him);
+him++; num++;
+}
+putchar('\n');
+}
 }
 
-return (0);
-}
