@@ -22,13 +22,14 @@ while (num <= 14)
 
 if (him > 9)
 {
-    him %= 10;
-    noi = 1;
+him %= 10;
+noi = 1;
 }
 if (noi)
 putchar('1');
 putchar('0' + him);
-him++; num++;
+him++;
+num++;
 }
 putchar('\n');
 }
