@@ -1,44 +1,46 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
- * print_number - a def
- * @n:int
- * Return: Always 0 or 1
+ * print_number - prints number
+ *
+ * @n: integer to print to character
  */
-
 void print_number(int n)
 {
-int was = 0;
-int tan = 1;
-int smaller = 0;
-if (n < 0)
-{
-smaller = 1;
-n *= -1;
-}
-if (n == 0)
-_putchar('0');
-else
-{
-int rev = 0;
-while (n)
-{
-rev *= 10;
-if (n % 10 == 0 && tan)
-was++;
-if (n % 10 != 0)
-tan = 0;
-rev += n % 10;
-n /= 10;
-}
-if (smaller)
-_putchar('-');
-while (rev)
-{
-_putchar('0' + rev % 10);
-rev /= 10;
-}
-}
-while (was--)
-_putchar('0');
+	int i;
+	int d = 1;
+	unsigned int x = n;
+	unsigned int y = n;
+	int c = 0;
+
+	if (n == 0)
+	{
+		_putchar('0');
+	}
+	if (n < 0)
+	{
+		_putchar('-');
+		n = n + 1;
+		n = -n;
+		y = n;
+		x = n;
+		x += 1;
+		y += 1;
+	}
+
+	while (x != 0)
+	{
+		x = x / 10;
+		c++;
+	}
+	for (i = 1; i < c; i++)
+	{
+		d *= 10;
+	}
+	for (i = 0; i < c; i++)
+	{
+		_putchar(y / d + '0');
+		y = y % d;
+		d = d / 10;
+	}
 }
