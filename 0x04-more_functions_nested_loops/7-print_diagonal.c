@@ -1,8 +1,9 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
- * print_diagonal - print a straight line using putchar of n size
- * @n: size of line
+ * print_diagonal - a def
+ * @n:int
+ * Return: Always 0 or 1
  */
 
 void print_diagonal(int n)
