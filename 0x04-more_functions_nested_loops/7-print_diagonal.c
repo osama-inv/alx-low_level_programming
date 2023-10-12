@@ -1,11 +1,12 @@
-#include <stdio.h>
+#include "main.h"
+
 /**
- * main - Entry Point
- *
- * Return: Always 0 (Success)
+ * print_diagonal - a def
+ * @n:int
+ * Return: Always 0 or 1
  */
 
-int main(void)
+void print_diagonal(int n)
 {
 int n = -5;
 if (n < 1)
@@ -21,7 +22,5 @@ j++;
 putchar('\\');
 putchar('\n');
 }
-
-return (0);
 }
 
