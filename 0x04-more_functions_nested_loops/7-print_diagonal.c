@@ -13,6 +13,7 @@ _putchar('\n');
 for (int i = 0; i<n; i++)
 {
 int j = 0;
+
 while (j < i)
 {
 _putchar(' ');
