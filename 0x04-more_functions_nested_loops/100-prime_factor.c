@@ -6,9 +6,9 @@
  * Return: Always 0 (Success)
  */
 
-int check(int ch)
+int check(unsigned long ch)
 {
-int k;
+unsigned long k;
 for (k = ch / 2; k > 1; k--)
 {
 if (ch % k == 0)
@@ -23,15 +23,15 @@ return (1);
  */
 int main(void)
 {
-long long num = 612852475143;
-long long i;
+unsigned long num = 612852475143UL;
+unsigned long i;
 
-for (i = 2; i <= num ; i++)
+for (i = 2UL; num != 1; i++)
 {
 while (num % i == 0 && check(i))
 num /= i;
 }
-printf("%d ", i);
+printf("%lu\n", i - 1);
 
 return (0);
 }
