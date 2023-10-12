@@ -8,31 +8,27 @@
 
 void print_number(int n)
 {
-int smaller = 0;
-
-if (n < 0)
+int new_n = n;
+if (new_n < 0)
 {
-smaller = 1;
-n *= -1;
+putchar('-');
+new_n *= -1;
 }
-
-if (n == 0)
-_putchar('0');
+if (new_n == 0)
+putchar('0');
 else
 {
 int rev = 0;
 
-while (n)
+while (new_n)
 {
 rev *= 10;
-rev += n % 10;
-n /= 10;
+rev += new_n % 10;
+new_n /= 10;
 }
-if (smaller)
-_putchar('-');
 while (rev)
 {
-_putchar('0' + rev % 10);
+putchar('0' + rev % 10);
 rev /= 10;
 }
 }
