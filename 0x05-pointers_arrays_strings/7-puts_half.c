@@ -1,41 +1,24 @@
 #include "main.h"
+#include "2-strlen.c"
 
 /**
  * _strlen - a def that does something.
- * @s: char.
- * Return: Always 0 (Success)
- */
-
-int _strlen(char *s)
-{
-int length = 0;
-
-while (*s != '\0')
-{
-length++;
-s++;
-}
-return (length / 2);
-}
-
-/**
- * puts_half - a def that does something.
  * @str: char.
  * Return: Always 0 (Success)
  */
 
 void puts_half(char *str)
 {
-int num = _strlen(str);
-if(str[0] == 'L')
-num++;
-char part = str[num];
+int i;
+int pp = 0;
 
-while (part)
+if (_strlen(str) % 2 != 0)
 {
-_putchar(part);
-num++;
-part = str[num];
+pp += 1;
+}
+for (i = (_strlen(str) + pp) / 2; i < _strlen(str); i++)
+{
+_putchar(str[i]);
 }
 _putchar('\n');
 }
