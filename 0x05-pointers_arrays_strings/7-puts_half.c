@@ -1,5 +1,4 @@
 #include "main.h"
-#include "2-strlen.c"
 
 /**
  * _strlen - a def that does something.
@@ -7,7 +6,7 @@
  * Return: Always 0 (Success)
  */
 
-int _strlen(char *s)
+int _strlena(char *s)
 {
 int length = 0;
 
@@ -29,7 +28,7 @@ return (length / 2);
 
 void puts_half(char *str)
 {
-int num = _strlen(str);
+int num = _strlena(str);
 char part = str[num];
 
 while (part)
