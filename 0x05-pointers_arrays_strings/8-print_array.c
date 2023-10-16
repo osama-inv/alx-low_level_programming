@@ -10,6 +10,8 @@
 void print_array(int *a, int n)
 {
 int rate = 0;
+if (n <= 0)
+putchar('\n');
 while ((n > 0) && (n--))
 {
 if (n > 0)
