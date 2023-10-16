@@ -3,22 +3,40 @@
 
 /**
  * _strlen - a def that does something.
+ * @s: char.
+ * Return: Always 0 (Success)
+ */
+
+int _strlen(char *s)
+{
+int length = 0;
+
+while (*s != '\0')
+{
+length++;
+s++;
+}
+if (length % 2 != 0)
+length++;
+return (length / 2);
+}
+
+/**
+ * puts_half - a def that does something.
  * @str: char.
  * Return: Always 0 (Success)
  */
 
 void puts_half(char *str)
 {
-int i;
-int pp = 0;
+int num = _strlen(str);
+char part = str[num];
 
-if (_strlen(str) % 2 != 0)
+while (part)
 {
-pp += 1;
+putchar(part);
+num++;
+part = str[num];
 }
-for (i = (_strlen(str) + pp) / 2; i < _strlen(str); i++)
-{
-_putchar(str[i]);
-}
-_putchar('\n');
+putchar('\n');
 }
