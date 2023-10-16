@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strlen - a def that does something.
+ * _strlena - a def that does something.
  * @s: char.
  * Return: Always 0 (Success)
  */
