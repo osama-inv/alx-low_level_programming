@@ -5,7 +5,6 @@
  * @s: char.
  * Return: Always 0 (Success)
  */
-
 int _strlen(char *s)
 {
 int length = 0;
@@ -27,9 +26,10 @@ return length;
 void rev_string(char *s)
 {
 int last = _strlen(s)-1;
+int finali = last;
 int first = 0;
 
-while (last != first)
+while (first!= (last+1) && first != last)
 {
 char temp = *(s + last);
 *(s + last) = *(s + first);
