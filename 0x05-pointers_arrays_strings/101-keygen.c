@@ -3,52 +3,50 @@
 #include <time.h>
 
 /**
- * main - Generates random valid passwords for the
- *        program 101-crackme.
- *
+ * main - a def that create pass
  * Return: Always 0.
  */
 int main(void)
 {
-	char password[84];
-	int index = 0, sum = 0, diff_half1, diff_half2;
+	char pass[84];
+	int i = 0, sum = 0, onee, twoo;
 
 	srand(time(0));
 
 	while (sum < 2772)
 	{
-		password[index] = 33 + rand() % 94;
-		sum += password[index++];
+		pass[i] = 33 + rand() % 94;
+		sum += pass[i++];
 	}
 
-	password[index] = '\0';
+	pass[i] = '\0';
 
 	if (sum != 2772)
 	{
-		diff_half1 = (sum - 2772) / 2;
-		diff_half2 = (sum - 2772) / 2;
+		onee = (sum - 2772) / 2;
+		twoo = (sum - 2772) / 2;
 		if ((sum - 2772) % 2 != 0)
-			diff_half1++;
+			onee++;
 
-		for (index = 0; password[index]; index++)
+		for (i = 0; pass[i]; i++)
 		{
-			if (password[index] >= (33 + diff_half1))
+			if (pass[i] >= (33 + onee))
 			{
-				password[index] -= diff_half1;
+				pass[i] -= onee;
 				break;
 			}
 		}
-		for (index = 0; password[index]; index++)
+		for (i = 0; pass[i]; i++)
 		{
-			if (password[index] >= (33 + diff_half2))
+			if (pass[i] >= (33 + twoo))
 			{
-				password[index] -= diff_half2;
+				pass[i] -= twoo;
 				break;
 			}
 		}
 	}
 
-	printf("%s", password);
+	printf("%s", pass);
 
 	return (0);
 }
