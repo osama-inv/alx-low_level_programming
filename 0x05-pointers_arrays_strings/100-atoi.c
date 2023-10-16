@@ -1,42 +1,42 @@
 #include "main.h"
 
 /**
- * _atoi - converts a string to an integer
- * @s: string to be converted
- * Return: integers in a string
+ * _atoi - def that does somthing
+ * @s: char
+ * Return: 0
  */
 
 int _atoi(char *s)
 {
-	int num, len, numcount, mult, x, neg;
+	int num, len, oss, mopp, nn, negt;
 
 	len = 0;
-	x = 0;
-	numcount = 0;
-	mult = 1;
-	neg = 1;
+	nn = 0;
+	oss = 0;
+	mopp = 1;
+	negt = 1;
 	num = 0;
 
 	while (s[len] != '\0')
 	{
 		if (s[len] >= '0' && s[len] <= '9')
 		{
-			numcount++;
+			oss++;
 			if (!(s[len + 1] >= '0' && s[len + 1] <= '9'))
 				break;
 		}
 		len++;
 	}
-	for (; numcount > 1; numcount--)
-		mult *= 10;
-	for (; x <= len; x++)
+	for (; oss > 1; oss--)
+		mopp *= 10;
+	for (; nn <= len; nn++)
 	{
-		if (s[x] == '-')
-			neg *= -1;
-		else if (s[x] <= '9' && s[x] >= '0')
+		if (s[nn] == '-')
+			negt *= -1;
+		else if (s[nn] <= '9' && s[nn] >= '0')
 		{
-			num += (s[x] - '0') * mult * neg;
-			mult /= 10;
+			num += (s[nn] - '0') * mopp * negt;
+			mopp /= 10;
 		}
 	}
 	return (num);
