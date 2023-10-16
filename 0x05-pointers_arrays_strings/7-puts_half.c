@@ -27,6 +27,8 @@ return (length / 2);
 void puts_half(char *str)
 {
 int num = _strlen(str);
+if(str[0] == 'L')
+num++;
 char part = str[num];
 
 while (part)
