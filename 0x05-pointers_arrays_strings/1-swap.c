@@ -2,7 +2,8 @@
 
 /**
  * swap_int - a def that does something.
- * @n: char.
+ * @a: char.
+ * @b: char.
  * Return: Always 0 (Success)
  */
 
