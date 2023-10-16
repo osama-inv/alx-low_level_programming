@@ -10,7 +10,7 @@
 void print_array(int *a, int n)
 {
 int rate = 0;
-while (n--)
+while ((n > 0) && (n--))
 {
 if (n > 0)
 printf("%d, ",a[rate++]);
