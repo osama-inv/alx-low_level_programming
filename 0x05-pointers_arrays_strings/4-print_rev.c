@@ -24,7 +24,7 @@ return (length);
  * @s: char.
  * Return: Always 0 (Success)
  */
- 
+
 void print_rev(char *s)
 {
 int len = _strlen(s);
