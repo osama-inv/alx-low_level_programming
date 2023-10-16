@@ -15,8 +15,8 @@ putchar('\n');
 while ((n > 0) && (n--))
 {
 if (n > 0)
-printf("%d, ",a[rate++]);
+printf("%d, ", a[rate++]);
 else
-printf("%d\n",a[rate++]);
+printf("%d\n", a[rate++]);
 }
 }
