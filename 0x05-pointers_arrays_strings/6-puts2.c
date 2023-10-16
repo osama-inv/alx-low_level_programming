@@ -13,7 +13,7 @@ char part = str[num];
 
 while (part)
 {
-if(num % 2 == 0)
+if (num % 2 == 0)
 _putchar(part);
 
 num++;
