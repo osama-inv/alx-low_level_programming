@@ -26,7 +26,6 @@ return length;
 void rev_string(char *s)
 {
 int last = _strlen(s)-1;
-int finali = last;
 int first = 0;
 
 while (first!= (last+1) && first != last)
