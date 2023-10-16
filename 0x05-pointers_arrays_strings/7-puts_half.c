@@ -15,8 +15,6 @@ while (*s != '\0')
 length++;
 s++;
 }
-if (length % 2 != 0)
-length--;
 return (length / 2);
 }
 
@@ -33,9 +31,9 @@ char part = str[num];
 
 while (part)
 {
-putchar(part);
+_putchar(part);
 num++;
 part = str[num];
 }
-putchar('\n');
+_putchar('\n');
 }
