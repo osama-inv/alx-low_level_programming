@@ -14,7 +14,7 @@ while (*s != '\0')
 length++;
 s++;
 }
-return length;
+return (length);
 }
 
 /**
@@ -25,10 +25,10 @@ return length;
 
 void rev_string(char *s)
 {
-int last = _strlen(s)-1;
+int last = _strlen(s) - 1;
 int first = 0;
 
-while (first!= (last+1) && first != last)
+while (first != (last + 1) && first != last)
 {
 char temp = *(s + last);
 *(s + last) = *(s + first);
