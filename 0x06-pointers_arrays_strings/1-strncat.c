@@ -10,21 +10,24 @@
 
 char *_strncat(char *dest, char *src, int n)
 {
-int open = 0;
-int i;
+int dest_len = 0;
+int src_len = 0;
 
-for (i = 0; i < 98; i++)
-{
-if (!*(dest + i) || open)
-{
-*(dest + i) = *src;
-src++;
-open++;
-if (open == n || !*src)
-break;
-}
-}
-if (open == n)
-*(dest + i+1) = '\0';
+while (dest[dest_len] != '\0')
+dest_len++;
+    
+
+while (src[src_len] != '\0')
+src_len++;
+
+
+int copy_len = (n < src_len) ? n : src_len;
+
+for (int i = 0; i < copy_len; i++)
+dest[dest_len + i] = src[i];
+
+dest[dest_len + copy_len] = '\0';
+
 return (dest);
 }
+
