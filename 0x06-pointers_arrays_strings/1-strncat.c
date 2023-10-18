@@ -21,7 +21,11 @@ while (src[src_len] != '\0')
 src_len++;
 
 
-int copy_len = (n < src_len) ? n : src_len;
+int copy_len;
+if (n < src_len)
+copy_len = n;
+else
+copy_len = src_len;
 
 for (int i = 0; i < copy_len; i++)
 dest[dest_len + i] = src[i];
