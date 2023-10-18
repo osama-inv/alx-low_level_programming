@@ -4,7 +4,7 @@
  * _strncat - a def that does something.
  * @dest: char.
  * @src: char.
- * @a: char.
+ * @n: char.
  * Return: Always 0 (Success)
  */
 
