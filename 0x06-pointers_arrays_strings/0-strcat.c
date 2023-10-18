@@ -9,10 +9,9 @@
 
 char *_strcat(char *dest, char *src)
 {
-int *dest_back = dest;
 int open = 0;
-
-for (int i = 0; i < 98; i++)
+int i;
+for (i = 0; i < 98; i++)
 {
 if (!*(dest + i) || open)
 {
@@ -23,5 +22,5 @@ if (!*src)
 break;
 }
 }
-return (dest_back);
+return (dest);
 }
