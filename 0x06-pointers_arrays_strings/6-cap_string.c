@@ -2,7 +2,7 @@
 
 /**
  * isSeparator - a def that does something.
- * @str: char.
+ * @a: char.
  * Return: Always 0 (Success)
  */
 
@@ -17,19 +17,19 @@ return (0);
 
 /**
  * cap_string - a def that does something.
- * @str: char.
+ * @a: char.
  * Return: Always 0 (Success)
  */
 
-char *cap_string(char *str)
+char *cap_string(char *a)
 {
-int *pour = str;
+int *pour = a;
 
-while (*str != '\0')
+while (*a != '\0')
 {
-if (*str >= 'a' && *str <= 'z' && isSeparator(*(str - 1)))
-*str -= ' ';
-str++;
+if (*a >= 'a' && *a <= 'z' && isSeparator(*(a - 1)))
+*a -= ' ';
+a++;
 }
 return (pour);
 }
