@@ -22,14 +22,20 @@ return (0);
  * Return: Always 0 (Success)
  */
 
-char *cap_string(char *a)
+char *cap_string(char *a);
 {
 int capitilize = 1;
 int i = 0;
 while (a[i])
 {
-if (a[i] >= 'a' && a[i] <= 'z' && isSeparator(a[i-1]))
+if (isSeparator(a[i]))
+capitilize = 1
+else if (capitilize)
+{
+if (a[i] >= 'a' && a[i] <= 'z')
 a[i] -= 32;
+capitilize = 0;
+}
 i++;
 }
 return (a);
