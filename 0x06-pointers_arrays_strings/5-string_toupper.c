@@ -9,13 +9,13 @@
 char *string_toupper(char *str)
 {
 int *pour = str;
-
-while (*str != '\0')
+int p = 0;
+while (pour[p] != '\0')
 {
-if (*str >= 'a' && *str <= 'z')
-*str -= ' ';
-str++;
+if (pour[p] >= 'a' && pour[p] <= 'z')
+pour[p] -= ' ';
+p++;
 }
 
-return (pour);
+return (str);
 }
