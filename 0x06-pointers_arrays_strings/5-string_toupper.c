@@ -2,20 +2,19 @@
 
 /**
  * string_toupper - a def that does something.
- * @str: char.
+ * @a: char.
  * Return: Always 0 (Success)
  */
 
-char *string_toupper(char *str)
+char *string_toupper(char *a)
 {
-int *pour = str;
 int p = 0;
-while (pour[p] != '\0')
+while (a[p] != '\0')
 {
-if (pour[p] >= 'a' && pour[p] <= 'z')
-pour[p] -= ' ';
+if (a[p] >= 'a' && a[p] <= 'z')
+a[p] -= 32;
 p++;
 }
 
-return (str);
+return (a);
 }
