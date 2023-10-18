@@ -1,28 +1,26 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
- * _strncat - a def that does something.
- * @dest: char.
- * @src: char.
- * @n: char.
- * Return: Always 0 (Success)
+ * _strncat - concatenates two strings only taking n bytes from src
+ * @dest: first string to be added to
+ * @src: second string to be added
+ * @n: number of bites to use from src
+ * Return: concatenated string
  */
 
 char *_strncat(char *dest, char *src, int n)
 {
-int open = 0;
-int i;
+	char *temp = dest;
 
-for (i = 0; *src; i++)
-{
-if (!*(dest + i) || open)
-{
-*(dest + i) = *src;
-src++;
-open++;
-if (open == n)
-break;
-}
-}
-return (dest);
+	for (; *temp != '\0'; temp++)
+		;
+	for (; *src != '\0'; src++)
+	{
+		if (n == 0)
+			break;
+		*temp = *src;
+		temp++;
+		n--;
+	}
+	return (dest);
 }
