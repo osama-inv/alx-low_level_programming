@@ -2,16 +2,17 @@
 
 /**
  * isSeparator - a def that does something.
- * @a: char.
- * Return: Always 0 (Success)
+ * @c: char.
+ * Return: Always 0 or 1
  */
 
-int isSeparator(char sep);
+int isSeparator(char c);
 {
-if (sep == ' ' || sep == '\t' || sep == '\n' || sep == ','
-|| sep == ';' || sep == '.' || sep == '!' || sep == '?' ||
-sep == '"' || sep == '('  || sep == ')' || sep == '{' || sep == '}')
-return (1);
+char spts[] = " \t\n,;.!?\"(){}";
+int i;
+for (i = 0; spts[i]; i++)
+if (spts[i] == c)
+return (1)
 return (0);
 }
 
@@ -23,13 +24,13 @@ return (0);
 
 char *cap_string(char *a)
 {
-int *pour = a;
-
-while (*a != '\0')
+int capitilize = 1;
+int i = 0;
+while (a[i])
 {
-if (*a >= 'a' && *a <= 'z' && isSeparator(*(a - 1)))
-*a -= ' ';
-a++;
+if (a[i] >= 'a' && a[i] <= 'z' && isSeparator(a[i-1]))
+a[i] -= 32;
+i++;
 }
-return (pour);
+return (a);
 }
