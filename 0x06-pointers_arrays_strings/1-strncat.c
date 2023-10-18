@@ -11,8 +11,9 @@
 char *_strncat(char *dest, char *src, int n)
 {
 int open = 0;
+int i;
 
-for (int i = 0; i < 98; i++)
+for (i = 0; i < 98; i++)
 {
 if (!*(dest + i) || open)
 {
