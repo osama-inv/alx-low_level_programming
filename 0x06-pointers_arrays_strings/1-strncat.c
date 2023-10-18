@@ -24,5 +24,7 @@ if (open == n || !*src)
 break;
 }
 }
+if (open == n)
+*(dest + i+1) = '\0';
 return (dest);
 }
