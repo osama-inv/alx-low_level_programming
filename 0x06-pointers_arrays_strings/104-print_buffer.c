@@ -1,50 +1,58 @@
 #include "main.h"
+#include <stdio.h>
 /**
- * print_buffer - a def that does something.
- * @b: char.
- * @size: char.
- * Return: Always 0 or 1
+ * print_line - prints a s bytes of a buffer
+ * @c: buffer to print
+ * @s: bytes of buffer to print
+ * @l: line of buffer to print
+ *
+ * Return: void
  */
 
-void print_buffer(char *b, int size)
+void print_line(char *c, int s, int l)
 {
-if (size <= 0)
+int j, k;
+for (j = 0; j <= 9; j++)
 {
-printf("\n");
-return;
-}
-
-int i, j;
-
-for (i = 0; i < size; i += 10)
-{
-printf("%08x: ", i);
-
-for (j = 0; j < 10; j++)
-{
-if (i + j < size)
-printf("%02x", b[i + j]);
+if (j <= s)
+printf("%02x", c[l * 10 + j]);
 else
 printf("  ");
-
-if (j % 2 == 1)
-printf(" ");
+if (j % 2)
+putchar(' ');
 }
-for (j = 0; j < 10; j++)
+for (k = 0; k <= s; k++)
 {
-if (i + j < size)
-{
-if (b[i + j] >= 32 && b[i + j] <= 126)
-{
-printf("%c", b[i + j]);
-} else {
-printf(".");
-}
-} else {
-printf(" ");
+if (c[l * 10 + k] > 31 && c[l * 10 + k] < 127)
+putchar(c[l * 10 + k]);
+else
+putchar('.');
 }
 }
 
-printf("\n");
+/**
+ * print_buffer - prints a buffer
+ * @b: buffer to print
+ * @size: size of buffer
+ *
+ * Return: void
+ */
+void print_buffer(char *b, int size)
+{
+int i;
+for (i = 0; i <= (size - 1) / 10 && size; i++)
+{
+printf("%08x: ", i * 10);
+if (i < size / 10)
+{
+print_line(b, 9, i);
 }
+else
+{
+print_line(b, size % 10 - 1, i);
+}
+putchar('\n');
+}
+if (size == 0)
+putchar('\n');
 }
