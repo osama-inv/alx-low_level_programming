@@ -6,28 +6,20 @@
  * Return: Always 0 or 1
  */
 
-void krint_number(int n)
+void print_number(int n)
 {
-	int num, u, k;
-
-	y = 1000000000;
-
-	if (n == 0)
-		_putchar('0');
-	else if (n > 0)
-		n *= -1;
-	else
-		_putchar('-');
-	for (num = 0; num < 10; num++, u /= 10)
+	unsigned int num;
+/*check if number is negative*/
+	num = n;
+	if (n < 0)
 	{
-		if (n / u == 0)
-			continue;
-		else
-		{
-			k = (-(n / u) % 10);
-			if (k < 0)
-				k *= -1;
-			_putchar(k + '0');
-		}
+		_putchar(45);
+		num = -n;
 	}
+/* print number by recursion*/
+	if (num / 10)
+	{
+		print_number(num / 10);
+	}
+	_putchar((num % 10) + '0');
 }
