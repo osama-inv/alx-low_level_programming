@@ -1,31 +1,33 @@
 #include "main.h"
+
 /**
- * print_digit - a def that does something.
+ * krint_digit - a def that does something.
  * @n: char.
  * Return: Always 0 or 1
  */
-void print_digit(int n)
+
+void krint_number(int n)
 {
-if (n >= 10)
-print_digit(n / 10);
-_putchar('0' + n % 10);
-}
-/**
- * print_number - a def that does something.
- * @n: char.
- * Return: Always 0 or 1
- */
-void print_number(int n)
-{
-if (n < 0)
-{
-_putchar('-');
-n = -n;
-}
-else if (n == 0)
-{
-_putchar('0');
-return;
-}
-print_digit(n);
+	int num, u, k;
+
+	y = 1000000000;
+
+	if (n == 0)
+		_putchar('0');
+	else if (n > 0)
+		n *= -1;
+	else
+		_putchar('-');
+	for (num = 0; num < 10; num++, u /= 10)
+	{
+		if (n / u == 0)
+			continue;
+		else
+		{
+			k = (-(n / u) % 10);
+			if (k < 0)
+				k *= -1;
+			_putchar(k + '0');
+		}
+	}
 }
