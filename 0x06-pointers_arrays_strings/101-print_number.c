@@ -8,8 +8,10 @@
 
 void print_number(int n)
 {
-int divisor = 1;
+int divisor;
 int digit;
+if (!divisor)
+divisor = 1;
 if (n < 0) {
 _putchar('-');
 n = -n;
