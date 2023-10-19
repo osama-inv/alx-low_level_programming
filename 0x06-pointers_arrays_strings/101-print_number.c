@@ -1,23 +1,22 @@
 #include "main.h"
 /**
- * print_digit - a def that does something.
- * @n: char.
- * Return: Always 0 or 1
+ *print_number - prints an integer.
+ *@n: integer to be printed.
+ *Return: void.
  */
 void print_number(int n)
 {
-unsigned int num;
-
-num = n;
-
-if (n < 0)
-{
-_putchar(45);
-num = -n;
-}
-if (num / 10)
-{
-print_number(num / 10);
-}
-_putchar((num % 10) + '0');
+	unsigned int num;
+/*check if number is negative*/
+	num = n;
+	if (n < 0)
+	{
+		_putchar(45);
+		num = -n;
+	}
+	if (num / 10)
+	{
+		print_number(num / 10);
+	}
+	_putchar((num % 10) + '0');
 }
