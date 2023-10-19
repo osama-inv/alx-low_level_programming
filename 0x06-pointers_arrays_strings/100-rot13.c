@@ -8,8 +8,6 @@
 
 char *rot13(char *str)
 {
-if (str == NULL)
-return NULL;
 int i;
 for (i = 0; str[i]; i++)
 {
