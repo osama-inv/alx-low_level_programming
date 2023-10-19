@@ -1,32 +1,28 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
- * cap_string - take strings and capitalize words
- * @a: string to capitalize
- * Return: capitalized words
+ * cap_string - a def that does something.
+ * @str: char.
+ * Return: Always 0 or 1
  */
 
-char *cap_string(char *a)
+char *cap_string(char *str)
 {
-	int i, x;
-	char *seperators = ",;.!?\"(){} \n\t";
-
-	for (i = 0; *(a + i) != '\0'; i++)
-	{
-		if (*(a + i) >= 'a' && *(a + i) <= 'z')
-			for (x = 0; *(seperators + x) != '\0'; x++)
-			{
-				if (*(a + i - 1) == *(seperators + x))
-				{
-					*(a + i) -= 32;
-					break;
-				}
-				else if (i == 0)
-				{
-					*(a + i) -= 32;
-					break;
-				}
-			}
-	}
-	return (a);
+int i = 0;
+while (str[i])
+{
+if (i == 0 || str[i - 1] == ' ' || str[i - 1] == '\t' ||
+str[i - 1] == '\n' || str[i - 1] == ',' || str[i - 1] == ';' ||
+str[i - 1] == '.' || str[i - 1] == '!' || str[i - 1] == '?' ||
+str[i - 1] == '"' || str[i - 1] == '(' || str[i - 1] == ')' ||
+str[i - 1] == '{' || str[i - 1] == '}')
+{
+if (str[i] >= 'a' && str[i] <= 'z')
+{
+str[i] -= ('a' - 'A');
+}
+}
+i++;
+}
+return (str);
 }
