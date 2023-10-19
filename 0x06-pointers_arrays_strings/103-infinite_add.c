@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * infinite_add - a def that does something.
- * @n: char.
+ * @n1: char.
  * @n2: char.
  * @r: char.
  * @size_r: char.
