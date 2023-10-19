@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * krint_digit - a def that does something.
+ * print_number - a def that does something.
  * @n: char.
  * Return: Always 0 or 1
  */
@@ -9,14 +9,12 @@
 void print_number(int n)
 {
 	unsigned int num;
-/*check if number is negative*/
 	num = n;
 	if (n < 0)
 	{
 		_putchar(45);
 		num = -n;
 	}
-/* print number by recursion*/
 	if (num / 10)
 	{
 		print_number(num / 10);
