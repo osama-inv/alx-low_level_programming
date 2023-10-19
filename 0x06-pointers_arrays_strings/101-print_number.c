@@ -1,0 +1,26 @@
+#include "main.h"
+
+/**
+ * print_number - a def that does something.
+ * @n: char.
+ * Return: Always 0 or 1
+ */
+
+void print_number(int n)
+{
+int divisor = 1;
+int digit;
+if (n < 0) {
+putchar('-');
+n = -n;
+}
+while (n / divisor >= 10) { d = 100
+divisor *= 10;
+}
+while (divisor != 0) {
+digit = n / divisor;
+putchar(digit + '0');
+n %= divisor; // 22
+divisor /= 10; // 10
+}
+}
