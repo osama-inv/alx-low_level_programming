@@ -10,11 +10,11 @@
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-int i = 0, j = 0, k, l, m, n;
-while (n1[i])
-i++
-while (n2[j])
-j++
+int i, j, k, l, m, n;
+for (i = 0; n1[i]; i++)
+;
+for (j = 0; n2[j]; j++)
+;
 if (i > size_r || j > size_r)
 return (0);
 m = 0;
