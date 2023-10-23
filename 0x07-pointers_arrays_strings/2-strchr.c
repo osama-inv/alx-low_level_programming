@@ -9,13 +9,9 @@
 
 char *_strchr(char *s, char c)
 {
-while (*s)
-{
-if (*s == c)
-return (s);
+while (*s != c)
 s++;
-}
-if (c == '\0')
+if (c == *s)
 return (s);
 return (NULL);
 }
