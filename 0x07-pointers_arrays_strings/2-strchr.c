@@ -9,11 +9,12 @@
 
 char *_strchr(char *s, char c)
 {
-while (*s)
+int *ptr = s;
+while (*ptr)
 {
-if (*s == c)
-return (s);
-s++;
+if (*ptr == c)
+return (ptr);
+ptr++;
 }
-return (nullptr);
+return (NULL);
 }
