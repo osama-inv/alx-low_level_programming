@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * _memset - a def that does something.
- * @s: char.
- * @b: char.
+ * _memcpy - a def that does something.
+ * @dest: char.
+ * @src: char.
  * @n: char.
  * Return: Always 0 (Success)
  */
