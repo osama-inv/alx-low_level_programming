@@ -8,9 +8,9 @@
 
 void _print_rev_recursion(char *s)
 {
+char *send = s;
 if (!*s)
 return;
-char *send = s;
 send++;
 _print_rev_recursion(send);
 _putchar(*s);
