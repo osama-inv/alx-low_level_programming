@@ -7,9 +7,9 @@
  */
 char *getlast(char *c)
 {
-    if (*c && *(c + 1))
-        getlast(c + 1);
-    return (c);
+if (*c && *(c + 1))
+return getlast(c + 1);
+return (c);
 }
 /**
  * getans - a def that does something.
@@ -19,13 +19,13 @@ char *getlast(char *c)
  */
 int getans(char *f, char *l)
 {
-    if (*f == *l)
-    {
-        if (f == l || (f + 1) == l)
-            return (1);
-        getans(f + 1, l - 1);
-    }
-    return (0);
+if (*f == *l)
+{
+if (f == l || (f + 1) == l)
+return (1);
+return getans(f + 1, l - 1);
+}
+return (0);
 }
 /**
  * is_palindrome - a def that does something.
@@ -34,6 +34,6 @@ int getans(char *f, char *l)
  */
 int is_palindrome(char *s)
 {
-    char *last = getlast(s);
-    return getans(s, last);
+char *last = getlast(s);
+return getans(s, last);
 }
