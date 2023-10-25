@@ -9,8 +9,7 @@ char *getlast(char *c)
 {
     if (*c && *(c + 1))
         getlast(c + 1);
-    else
-        return (c);
+    return (c);
 }
 /**
  * getans - a def that does something.
@@ -26,8 +25,7 @@ int getans(char *f, char *l)
             return (1);
         getans(f + 1, l - 1);
     }
-    else
-        return (0);
+    return (0);
 }
 /**
  * is_palindrome - a def that does something.
