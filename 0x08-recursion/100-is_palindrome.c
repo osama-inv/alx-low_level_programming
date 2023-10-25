@@ -8,7 +8,7 @@
 char *getlast(char *c)
 {
 if (*c && *(c + 1))
-return getlast(c + 1);
+return (getlast(c + 1));
 return (c);
 }
 /**
@@ -23,7 +23,7 @@ if (*f == *l)
 {
 if (f == l || (f + 1) == l)
 return (1);
-return getans(f + 1, l - 1);
+return (getans(f + 1, l - 1));
 }
 return (0);
 }
@@ -35,5 +35,5 @@ return (0);
 int is_palindrome(char *s)
 {
 char *last = getlast(s);
-return getans(s, last);
+return (getans(s, last));
 }
