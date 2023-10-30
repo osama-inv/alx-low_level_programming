@@ -24,8 +24,8 @@ array[i] = (int *)malloc(width * sizeof(int));
 if (array[i] == NULL)
 {
 for (j = 0; j < i; j++)
-free(a[j]);
-free(a);
+free(array[j]);
+free(array);
 return (NULL);
 }
 for (j = 0; j < width; j++)
