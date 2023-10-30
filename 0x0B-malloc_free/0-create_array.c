@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * create_array - a def that does something.
@@ -9,9 +10,10 @@
 
 char *create_array(unsigned int size, char c)
 {
+char* one;
 if (!size)
 return (NULL);
-char* one = malloc(size * sizeof(char));
+one = malloc(size * sizeof(char));
 if (one == NULL)
 return (NULL);
 int i;
