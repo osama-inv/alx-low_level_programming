@@ -9,15 +9,21 @@
  */
 int count_words(char *str)
 {
-    int i, num = 0;
-    char prev;
-    for (i = 0; str[i]; i++)
+    int words = 0, i = 0;
+
+    while (*(str + i))
     {
-        if (str[i] != ' ' && prev == ' ')
-            num++;
-        prev = str[i];
+        while (*(str + i) == ' ')
+            i++;
+
+        if (*(str + i))
+            words++;
+
+        while (*(str + i) && *(str + i) != ' ')
+            i++;
     }
-    return (num);
+
+    return (words);
 }
 
 /**
