@@ -23,4 +23,3 @@ for (i = 0; str[i]; i++)
 s[i] = str[i];
 return (s);
 }
-
