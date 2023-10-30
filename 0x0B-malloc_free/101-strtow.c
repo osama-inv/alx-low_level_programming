@@ -2,16 +2,6 @@
 #include <stdlib.h>
 
 /**
- * argstostr - a def that does something.
- * @ac: char.
- * @av: char.
- * Return: Always 0 (Success)
- */
-
-#include <stdlib.h>
-#include "holberton.h"
-
-/**
  * count_words - Counts the number of words in a string.
  * @str: The string to be counted.
  *
