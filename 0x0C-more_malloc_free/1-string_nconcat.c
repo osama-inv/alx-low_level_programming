@@ -27,7 +27,7 @@ sc++;
 if (n > sc)
 n = sc;
 sum = fr + n;
-full = malloc(sum + 1);
+full = malloc((sum + 1) * sizeof(char));
 if (!full)
 return (NULL);
 for (i = 0; i < fr; i++)
