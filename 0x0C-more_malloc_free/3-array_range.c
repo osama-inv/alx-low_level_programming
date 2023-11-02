@@ -15,10 +15,13 @@ int i, tag, *arr;
 
 if (min > max)
 return (NULL);
-arr = malloc((1 + (max - min)) * sizeof(int));
+arr = malloc((1 + max - min) * sizeof(int));
 if (arr == NULL)
 return (NULL);
-for (i = min; i <= max; i++)
-arr[tag++] = i;
+for (i = 0; min <= max; i++)
+{
+arr[i] = min;
+min++;
+}
 return (arr);
 }
