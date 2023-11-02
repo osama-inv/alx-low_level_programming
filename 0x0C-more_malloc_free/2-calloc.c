@@ -1,51 +1,39 @@
 #include <stdlib.h>
 
 /**
- * _memset - fills memory with a constant byte
+ * _memset - fills memory with 0
  *
- * @s: input pointer that represents memory
- *     block to fill
- * @b: characters to fill
- * @n: number of bytes to be filled
+ * @s: input pointer
+ * @b: characters
+ * @n: number of bytes
  *
- * Return: A pointer to the filled memory area
+ * Return: A pointer to the array
 */
 
 char *_memset(char *s, char b, unsigned int n)
 {
-	unsigned int i;
+unsigned int i;
 
-	for (i = 0; i < n; i++)
-		s[i] = b;
-	return (s);
+for (i = 0; i < n; i++)
+s[i] = b;
+return (s);
 }
-
 /**
- * _calloc - a function that allocates
- *           memory for an array using malloc
+ * _calloc - fills memory with 0
  *
- *           It is basically the equivalent to
- *           malloc followed by memset
- *
- * @nmemb: size of array
- * @size: size of each element
- *
- * Return: pointer with new allocated memory
- *         or NULL if it fails
+ * @nmemb: input pointer
+ * @size: characters
+ * Return: A pointer to the array
 */
-
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	char *p;
+char *arr;
 
-	if (nmemb == 0 || size == 0)
-		return (NULL);
-
-	p = malloc(nmemb * size);
-	if (p == NULL)
-		return (NULL);
-
-	_memset(p, 0, nmemb * size);
-
-	return (p);
+if (size == 0 || nmemb == 0)
+return (NULL);
+arr = malloc(nmemb * size);
+if (arr == NULL)
+return (NULL);
+_memset(arr, 0, nmemb * size);
+return (arr);
 }
