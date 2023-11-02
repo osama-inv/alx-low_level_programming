@@ -32,7 +32,7 @@ if (!full)
 return (NULL);
 for (i = 0; i < fr; i++)
 full[i] = s1[i];
-for (j = 0; j < fr; j++)
+for (j = 0; j < sc && s1[j] != '\0'; j++)
 {
 full[i] = s1[j];
 j++;
