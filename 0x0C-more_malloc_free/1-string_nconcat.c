@@ -14,7 +14,7 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 char *full;
-int fr = 0, sum = 0, sc = 0, i, closed = 1;
+int fr = 0, sum = 0, sc = 0, i, j;
 
 if (s1 == NULL)
 s1 = "";
@@ -32,20 +32,15 @@ sc++;
 }
 if (n < sc)
 sc = n;
-sum = fr + sc + 1;
-full = malloc(sum);
-if (!full || sum == 0)
+sum = fr + sc;
+full = malloc(sum + 1);
+if (!full)
 return(NULL);
-for (i = 0; i < sum - 1; i++)
-{
-if (s1[i] && closed)
+for (i = 0; i < fr; i++)
 full[i] = s1[i];
-else
-{
-closed = 0;
-full[i] = s2[i - fr];
-}
-}
-full[i] = '\0';
+for (j = 0; j < sc; j++, i++)
+full[i] = s1[j];
+
+full[i] = 0;
 return (full);
 }
