@@ -1,4 +1,3 @@
-#include <stdlib.h>
 
 /**
  * _memset - fills memory with 0
