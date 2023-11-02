@@ -11,7 +11,7 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
     char *full;
-    int fr = 0, sum = 0, sc = 0, i, j;
+    int fr, sum, sc, i, j;
 
     if (!s1 && !s2)
         return (NULL);
@@ -19,6 +19,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
         s1 = "";
     if (s2 == NULL)
         s2 = "";
+    fr = sc = 0;
     while (s1[fr] || s2[sc])
     {
         if (s1[fr])
