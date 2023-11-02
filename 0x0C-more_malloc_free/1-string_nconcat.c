@@ -1,10 +1,10 @@
 #include <stdlib.h>
 
 /**
- * string_nconcat - function that concatenates two strings
+ * string_nconcat - concatenates two strings
  *
- * @s1: string 1
- * @s2: string 2
+ * @s1:  char
+ * @s2:  char
  * @n: bytes of @s2 to add to @s1 to be a new string
  *
  * Return: new string followed by the first @n bytes
