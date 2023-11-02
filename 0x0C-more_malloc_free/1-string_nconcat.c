@@ -11,7 +11,7 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 char *full;
-unsigned fr, sum, sc, i, j;
+unsigned int fr, sum, sc, i, j;
 
 if (!s1 && !s2)
 return (NULL);
@@ -29,7 +29,7 @@ n = sc;
 sum = fr + n;
 full = malloc(sum + 1);
 if (!full)
-return(NULL);
+return (NULL);
 for (i = 0; i < fr; i++)
 full[i] = s1[i];
 for (j = 0; j < fr; j++)
