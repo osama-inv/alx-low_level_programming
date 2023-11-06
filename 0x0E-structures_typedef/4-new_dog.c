@@ -22,7 +22,7 @@ int _strlen(char *s)
 }
 
 /**
- * *_strcpy - copies 
+ * *_strcpy - copies
  * @dest: pointer to the buffer
  * @src: string to copu
  *
