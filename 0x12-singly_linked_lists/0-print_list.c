@@ -1,5 +1,9 @@
 #include "lists.h"
-
+/**
+ * print_list - print linked list
+ * @h: string - node
+ * Description: singly linked list
+ */
 size_t print_list(const list_t *h)
 {
 size_t i = 0;
