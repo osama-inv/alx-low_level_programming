@@ -17,7 +17,7 @@ i++;
 return (i);
 }
 /**
- * add_node - add_node
+ * add_node_end - add_node
  * @head: list_t
  * @str: char *
  * Return: address
