@@ -22,7 +22,7 @@ return (i);
  * @str: char *
  * Return: address
  */
-list_t *add_node(list_t **head, const char *str)
+list_t *add_node_end(list_t **head, const char *str)
 {
 list_t *id = *head;
 list_t *neww = malloc(sizeof(list_t)); /* Allocate memory for the new node*/
