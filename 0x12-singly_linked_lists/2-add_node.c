@@ -8,7 +8,7 @@ unsigned int Count(char *c)
 {
 unsigned int i = 0;
 if (!c)
-return(0);
+return (0);
 while (c[i])
 i++;
 return (i);
