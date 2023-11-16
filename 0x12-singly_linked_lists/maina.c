@@ -2,6 +2,6 @@
 
 int main()
 {
-printf("Hello, Assembly!\n");
+printf("Hello, Holberton\n");
 return (0);
 }
