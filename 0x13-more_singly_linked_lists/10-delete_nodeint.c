@@ -7,10 +7,8 @@
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-listint_t *tempp;
-listint_t *getrm;
-unsigned int i;
-unsigned int fire = 0
+listint_t *tempp, *getrm;
+unsigned int i, fire = 0
 
 if (!*head)
 return (-1);
