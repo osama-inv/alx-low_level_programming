@@ -7,29 +7,28 @@
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-listint_t *tempp, *getrm;
-unsigned int i, fire = 0
-
+listint_t *have, *rm;
+unsigned int i, work = 0;
 if (!*head)
 return (-1);
-for (i = 0, tempp = *head; tempp && index; i++, tempp = (*tempp).next)
+for (i = 0, have = *head; have && index; i++, have = (*have).next)
 if (i == (index - 1))
 {
-fire = 1;
+work = 1;
 break;
 }
-if (fire)
+if (work)
 {
-getrm = (*tempp).next;
-(*tempp).next = (*getrm).next;
-free(getrm);
+rm = (*have).next;
+(*have).next = (*rm).next;
+free(rm);
 return (1);
 }
 else if (!index && (**head).next)
 {
-getrm = *head;
-*head = (*getrm).next;
-free(getrm);
+rm = *head;
+*head = (*rm).next;
+free(rm);
 return (1);
 }
 else if (!index && *head)
