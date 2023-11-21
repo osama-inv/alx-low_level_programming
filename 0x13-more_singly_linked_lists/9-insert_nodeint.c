@@ -12,6 +12,8 @@ unsigned int i = 0;
 listint_t *h = *head;
 listint_t *after;
 listint_t *new_node;
+if (h == NULL && idx != 0)
+return (NULL);
 if (idx == 0)
 {
 new_node = malloc(sizeof(listint_t));
