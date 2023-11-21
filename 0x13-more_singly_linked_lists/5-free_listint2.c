@@ -7,7 +7,7 @@
 void free_listint2(listint_t **head)
 {
 listint_t *rm;
-while (*head)
+while (head && *head)
 {
 rm = *head;
 *head = (*head)->next;
