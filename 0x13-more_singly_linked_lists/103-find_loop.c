@@ -1,32 +1,30 @@
 #include "lists.h"
-
 /**
- * find_listint_loop - finds the beggining of a loop in a linked list
- * @head: beggining of linked list
- * Return: beggining of loop
+ * find_listint_loop - get
+ * @head: head of linked list
+ * Return: start of a loop
  */
-
 listint_t *find_listint_loop(listint_t *head)
 {
-	listint_t *slow, *fast;
+	listint_t *lordre, *vite;
 
 	while (head && (*head).next)
 	{
-		slow = head;
-		fast = (*head).next;
-		while (slow != fast)
+		lordre = head;
+		vite = (*head).next;
+		while (lordre != vite)
 		{
-			if (slow)
-				slow = (*slow).next;
-			if (fast == head)
+			if (lordre)
+				lordre = (*lordre).next;
+			if (vite == head)
 				return (head);
-			if (fast)
-				fast = (*fast).next;
-			if (fast == head)
+			if (vite)
+				vite = (*vite).next;
+			if (vite == head)
 				return (head);
-			if (fast)
-				fast = (*fast).next;
-			if (fast == head)
+			if (vite)
+				vite = (*vite).next;
+			if (vite == head)
 				return (head);
 		}
 		head = (*head).next;
