@@ -1,40 +1,38 @@
 #include "lists.h"
 
 /**
- * free_listp - frees a linked list
- * @head: head of a list.
+ * free_listp - get gree
+ * @head: --
  *
- * Return: no return.
+ * Return: --
  */
 void free_listp(listp_t **head)
 {
-	listp_t *temp;
-	listp_t *curr;
+	listp_t *moaqat;
+	listp_t *haly;
 
 	if (head != NULL)
 	{
-		curr = *head;
-		while ((temp = curr) != NULL)
+		haly = *head;
+		while ((moaqat = haly) != NULL)
 		{
-			curr = curr->next;
-			free(temp);
+			haly = haly->next;
+			free(moaqat);
 		}
 		*head = NULL;
 	}
 }
-
 /**
- * print_listint_safe - prints a linked list.
- * @head: head of a list.
- *
- * Return: number of nodes in the list.
+ * print_listint_safe - screen
+ * @head: head
+ * Return: num.
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t nnodes = 0;
-	listp_t *hptr, *new, *add;
+	size_t newnode = 0;
+	listp_t *tecc, *new, *tagadd;
 
-	hptr = NULL;
+	tecc = NULL;
 	while (head != NULL)
 	{
 		new = malloc(sizeof(listp_t));
@@ -43,27 +41,26 @@ size_t print_listint_safe(const listint_t *head)
 			exit(98);
 
 		new->p = (void *)head;
-		new->next = hptr;
-		hptr = new;
+		new->next = tecc;
+		tecc = new;
 
-		add = hptr;
+		tagadd = tecc;
 
-		while (add->next != NULL)
+		while (tagadd->next != NULL)
 		{
-			add = add->next;
-			if (head == add->p)
+			tagadd = tagadd->next;
+			if (head == tagadd->p)
 			{
 				printf("-> [%p] %d\n", (void *)head, head->n);
-				free_listp(&hptr);
-				return (nnodes);
+				free_listp(&tecc);
+				return (newnode);
 			}
 		}
 
 		printf("[%p] %d\n", (void *)head, head->n);
 		head = head->next;
-		nnodes++;
+		newnode++;
 	}
-
-	free_listp(&hptr);
-	return (nnodes);
+	free_listp(&tecc);
+	return (newnode);
 }
