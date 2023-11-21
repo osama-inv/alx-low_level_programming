@@ -7,14 +7,8 @@
  */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-unsigned int nelem = 0;
-listint_t *h = head;
-while (h != NULL)
-{
-h = h->next;
-nelem++;
-if (nelem == index)
-return (h);
-}
-return (h);
+unsigned int i;
+for (i = 0; i < index && head != NULL; i++)
+head = head->next;
+return (head);
 }
