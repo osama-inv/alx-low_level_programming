@@ -1,64 +1,65 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * error_file - get errs.
- * @gethere: var.
- * @goto: var.
- * @argv: var vector.
- * Return: non.
+ * error_file - checks if files can be opened.
+ * @getHere: getHere.
+ * @GiveTo: GiveTo.
+ * @argv: arguments vector.
+ * Return: no return.
  */
-void error_file(int gethere, int goto, char *argv[])
+void error_file(int getHere, int GiveTo, char *argv[])
 {
-	if (-1 == gethere)
+	if (getHere == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	if (goto == -1)
+	if (GiveTo == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 }
+
 /**
- * main - main
- * @argc: num
- * @argv: arr
- * Return: 0.
+ * main - check the code for Holberton School students.
+ * @argc: number of arguments.
+ * @argv: arguments vector.
+ * Return: Always 0.
  */
 int main(int argc, char *argv[])
 {
-	int gethere, goto, mistake;
+	int getHere, GiveTo, ErrorMis;
 	ssize_t nchars, nwr;
 	char buf[1024];
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "%s\n", "Usage: cp gethere goto");
+		dprintf(STDERR_FILENO, "%s\n", "Usage: cp getHere GiveTo");
 		exit(97);
 	}
-	gethere = open(argv[1], O_RDONLY);
-	goto = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
-	error_file(gethere, goto, argv);
+	getHere = open(argv[1], O_RDONLY);
+	GiveTo = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
+	error_file(getHere, GiveTo, argv);
 	nchars = 1024;
 	while (nchars == 1024)
 	{
-		nchars = read(gethere, buf, 1024);
+		nchars = read(getHere, buf, 1024);
 		if (nchars == -1)
 			error_file(-1, 0, argv);
-		nwr = write(goto, buf, nchars);
+		nwr = write(GiveTo, buf, nchars);
 		if (nwr == -1)
 			error_file(0, -1, argv);
 	}
-	mistake = close(gethere);
-	if (mistake == -1)
+	ErrorMis = close(getHere);
+	if (ErrorMis == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", gethere);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", getHere);
 		exit(100);
 	}
-	mistake = close(goto);
-	if (mistake == -1)
+	ErrorMis = close(GiveTo);
+	if (ErrorMis == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", gethere);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", getHere);
 		exit(100);
 	}
 	return (0);
