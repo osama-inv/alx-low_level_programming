@@ -1,29 +1,32 @@
 /*
- * I know you
- * new
+ * File: 100-elf_header.c
+ * Auth: Brennan D Baraban
  */
+
 #include <elf.h>
-#include <stdlib.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
+
+void check_elf(unsigned char *e_ident);
+void get_magic(unsigned char *e_ident);
+void get_class(unsigned char *e_ident);
 void get_data(unsigned char *e_ident);
 void get_version(unsigned char *e_ident);
-void get_magic(unsigned char *e_ident);
-void get_osabi(unsigned char *e_ident);
 void get_abi(unsigned char *e_ident);
+void get_osabi(unsigned char *e_ident);
+void get_type(unsigned int e_type, unsigned char *e_ident);
 void get_entry(unsigned long int e_entry, unsigned char *e_ident);
 void close_elf(int elf);
-void check_elf(unsigned char *e_ident);
-void get_type(unsigned int e_type, unsigned char *e_ident);
-void get_class(unsigned char *e_ident);
+
 /**
- * check_elf - def
- * @e_ident: var.
+ * check_elf - C
+ * @e_ident: A
  *
- * Description: --.
+ * Description: If
  */
 void check_elf(unsigned char *e_ident)
 {
@@ -41,15 +44,19 @@ void check_elf(unsigned char *e_ident)
 		}
 	}
 }
+
 /**
- * get_magic - get_magic
- * @e_ident: e_ident
- * Description: Description
+ * get_magic - P
+ * @e_ident: A 
+ *
+ * Description: numbers are separated by spaces.
  */
 void get_magic(unsigned char *e_ident)
 {
 	int index;
+
 	printf("  Magic:   ");
+
 	for (index = 0; index < EI_NIDENT; index++)
 	{
 		printf("%02x", e_ident[index]);
@@ -60,9 +67,10 @@ void get_magic(unsigned char *e_ident)
 			printf(" ");
 	}
 }
+
 /**
- * get_class - get_class
- * @e_ident: e_ident
+ * get_class - Prints the class of an ELF header.
+ * @e_ident: A pointer to an array containing the ELF class.
  */
 void get_class(unsigned char *e_ident)
 {
@@ -85,8 +93,8 @@ void get_class(unsigned char *e_ident)
 }
 
 /**
- * get_data - get_data
- * @e_ident: Ae_ident
+ * get_data - Prints the data of an ELF header.
+ * @e_ident: A pointer to an array containing the ELF class.
  */
 void get_data(unsigned char *e_ident)
 {
@@ -109,8 +117,8 @@ void get_data(unsigned char *e_ident)
 }
 
 /**
- * get_version - get_version
- * @e_ident: e_ident
+ * get_version - Prints the version of an ELF header.
+ * @e_ident: A pointer to an array containing the ELF version.
  */
 void get_version(unsigned char *e_ident)
 {
@@ -129,8 +137,8 @@ void get_version(unsigned char *e_ident)
 }
 
 /**
- * get_osabi - get_osabi
- * @e_ident: e_ident
+ * get_osabi - Prints the OS/ABI of an ELF header.
+ * @e_ident: A pointer to an array containing the ELF version.
  */
 void get_osabi(unsigned char *e_ident)
 {
@@ -174,8 +182,8 @@ void get_osabi(unsigned char *e_ident)
 }
 
 /**
- * get_abi - get_abi
- * @e_ident: e_ident
+ * get_abi - Prints the ABI version of an ELF header.
+ * @e_ident: A pointer to an array containing the ELF ABI version.
  */
 void get_abi(unsigned char *e_ident)
 {
@@ -184,9 +192,9 @@ void get_abi(unsigned char *e_ident)
 }
 
 /**
- * get_type - get_type
- * @e_type: --
- * @e_ident: --
+ * get_type - Prints the type of an ELF header.
+ * @e_type: The ELF type.
+ * @e_ident: A pointer to an array containing the ELF class.
  */
 void get_type(unsigned int e_type, unsigned char *e_ident)
 {
@@ -218,9 +226,9 @@ void get_type(unsigned int e_type, unsigned char *e_ident)
 }
 
 /**
- * get_entry - get_entry
- * @e_entry: --
- * @e_ident: --
+ * get_entry - Prints the entry point of an ELF header.
+ * @e_entry: The address of the ELF entry point.
+ * @e_ident: A pointer to an array containing the ELF class.
  */
 void get_entry(unsigned long int e_entry, unsigned char *e_ident)
 {
@@ -241,8 +249,8 @@ void get_entry(unsigned long int e_entry, unsigned char *e_ident)
 }
 
 /**
- * close_elf - close_elf
- * @elf: elf
+ * close_elf - Closes an ELF file.
+ * @elf: The file descriptor of the ELF file.
  *
  * Description: If the file cannot be closed - exit code 98.
  */
@@ -271,6 +279,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 {
 	Elf64_Ehdr *header;
 	int o, r;
+
 	o = open(argv[1], O_RDONLY);
 	if (o == -1)
 	{
@@ -292,6 +301,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: `%s`: No such file\n", argv[1]);
 		exit(98);
 	}
+
 	check_elf(header->e_ident);
 	printf("ELF Header:\n");
 	get_magic(header->e_ident);
@@ -302,6 +312,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	get_abi(header->e_ident);
 	get_type(header->e_type, header->e_ident);
 	get_entry(header->e_entry, header->e_ident);
+
 	free(header);
 	close_elf(o);
 	return (0);
