@@ -1,43 +1,29 @@
-#include "holberton.h"
-#include <stdlib.h>
+#include "main.h"
 /**
-  * read_textfile - get
-  * @filename: the file
-  * @letters: num of letters
-  * Return: --
-  */
+ * read_textfile - def
+ * @filename: filename.
+ * @letters: letters.
+ * Return: numbers of letters printed. It fails, returns 0.
+ */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-char *place;
-size_t gett, see;
-int filen;
-if (!filename || !letters)
-{
-return (0);
-}
-place = malloc(letters);
-if (!place)
-{
-return (0);
-}
-/* get it open */
-filen = open(filename, O_RDONLY);
-if (filen == -1)
-{
-free(place);
-return (0);
-}
-gett = read(filen, place, letters);
-if (gett < 1)
-{
-free(place);
-close(filen);
-return (0);
-}
-see = write(STDOUT_FILENO, place, gett);
-free(place);
-close(filen);
-if (!see || see != gett)
-return (0);
-return (gett);
+	int file;
+	ssize_t num, nwr;
+	char *buf;
+
+	if (!filename)
+    {
+        return (0);
+    }
+	file = open(filename, O_RDONLY);
+	if (file == -1)
+		return (0);
+	buf = malloc(sizeof(char) * (letters));
+	if (!buf)
+		return (0);
+	num = read(file, buf, letters);
+	nwr = write(STDOUT_FILENO, buf, num);
+	close(file);
+	free(buf);
+	return (nwr);
 }
